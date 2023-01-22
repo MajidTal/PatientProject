@@ -15,6 +15,16 @@ public class PatientInfo implements Serializable {
 		Scanner sc = new Scanner(System.in);
 		Patient pa = new Patient();
 
+		boolean condation = true ;
+		
+		while(condation)
+		{
+			System.out.println("select 1 for serlization ");
+			System.out.println("select 2 for de-serlization");
+			System.out.println("select 3 for Exit ");
+         int select = sc.nextInt();
+		if(select == 1)
+		{
 		System.out.println("(Welcome to our site)");
 		System.out.println("\nPlease Enter your name:");
 		pa.setName(sc.next());
@@ -34,8 +44,10 @@ public class PatientInfo implements Serializable {
 			System.out.println("serialized and saved");
 		} catch (Exception e) {
 			e.printStackTrace();
-
 		}
+		}
+		else if(select == 2)
+		{
 		try {
 			// Reading the object from a file
 			FileInputStream file = new FileInputStream("Patient.txt");
@@ -54,6 +66,14 @@ public class PatientInfo implements Serializable {
 		} catch (ClassNotFoundException ex) {
 			System.out.println("ClassNotFoundException is caught");
 		}
+		}
+		
+		else if(select == 3)
+		{
+			condation = false ;
+			System.out.println("thanks!!!!!");
+		}
+	}
 
 	}
 
